@@ -8,5 +8,4 @@ nataie_lopez
 Maricela Duron
 
 
-new merge-NL 
 projects are fun lol
