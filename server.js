@@ -3,6 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require('morgan');
 const session = require("express-session");
+const passport = require("passport");
+
 
 
 //const methodOverride = require("method-override");
@@ -32,7 +34,10 @@ app.get('/', function (req, res) {
     })
   );
 
+  app.use(passport.initialize());
+  app.use(passport.session());
 
+  
 
 
 
