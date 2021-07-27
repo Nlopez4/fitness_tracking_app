@@ -21,11 +21,6 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.set("view engine", "ejs");
-app.get('/', function (req, res) {
-    res.send('Welcome');
-  });
-
-
 
 // connect to the MongoDB with mongoose
 require('./config/database');
@@ -43,8 +38,9 @@ require("./config/passport");
   app.use(passport.initialize());
   app.use(passport.session());
 
-  
+  //welcome signin/log in page
   app.use('/', indexRoutes);
+  //user lands in this page after logging in
   app.use('/', userRoutes);
 
 
