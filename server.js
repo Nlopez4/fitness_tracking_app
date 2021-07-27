@@ -2,6 +2,8 @@ require("dotenv").config();
 /* ==== External Modules ==== */
 const express = require("express");
 const bodyParser = require("body-parser");
+const logger = require('morgan');
+const router = express.Router();
 
 /* ==== Internal Modules ==== */
 const routes = require("./routes");
@@ -9,12 +11,26 @@ const MongoClient = require('mongodb').MongoClient
 /* ==== Instanced Modules  ==== */
 const app = express();
 
+
 /* ====  Configuration  ==== */
 const PORT = process.env.PORT || 4000;
-
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }))
 
+
+// Middleware
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(logger('dev'));
+app.use(express.static('public'));
+app.use('/', router);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+
+
+
+// Server bind
 app.get('/', function (req, res) {
     res.send('Welcome');
   });
