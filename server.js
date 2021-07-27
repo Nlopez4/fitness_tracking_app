@@ -1,10 +1,11 @@
 require("dotenv").config();
 /* ==== External Modules ==== */
 const express = require("express");
-const morgan = require('morgan');
+//const morgan = require('morgan');
 const session = require("express-session");
 const passport = require("passport");
-
+const indexRoutes = require('./routes/index');
+//const userRoutes = require('./routes/user');
 
 
 //const methodOverride = require("method-override");
@@ -25,6 +26,10 @@ app.get('/', function (req, res) {
 
 
 
+// connect to the MongoDB with mongoose
+require('./config/database');
+require("./config/passport");
+
 //passportmiddleware
   app.use(
     session({
@@ -38,7 +43,8 @@ app.get('/', function (req, res) {
   app.use(passport.session());
 
   
-
+  app.use('/', indexRoutes);
+  //app.use('/', userRoutes);
 
 
 app.listen(PORT, () => {
