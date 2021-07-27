@@ -5,7 +5,8 @@ const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
 const indexRoutes = require('./routes/index');
-//const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/user');
+
 
 
 //const methodOverride = require("method-override");
@@ -44,7 +45,7 @@ require("./config/passport");
 
   
   app.use('/', indexRoutes);
-  //app.use('/', userRoutes);
+  app.use('/', userRoutes);
 
 
 

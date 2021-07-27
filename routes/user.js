@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const userCtrl = require('../controllers/user');
 
+
 // GET /user
 router.get('/user', isLoggedIn, userCtrl.index);
 
@@ -11,3 +12,4 @@ function isLoggedIn(req, res, next) {
   }
 
 module.exports = router;
+
