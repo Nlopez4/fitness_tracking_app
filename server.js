@@ -11,7 +11,7 @@ const indexRoutes = require('./routes/index');
 //const methodOverride = require("method-override");
 
 /* ==== Internal Modules ==== */
-const routes = require("./routes");
+
 
 /* ==== Instanced Modules  ==== */
 const app = express();
@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
 require('./config/database');
 require("./config/passport");
 
-//passportmiddleware
+//passport middleware
   app.use(
     session({
       secret: "FitnessRocks!",
@@ -45,6 +45,8 @@ require("./config/passport");
   
   app.use('/', indexRoutes);
   //app.use('/', userRoutes);
+
+
 
 
 app.listen(PORT, () => {

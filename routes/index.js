@@ -18,7 +18,7 @@ router.get(
     "/oauth2callback",
     passport.authenticate("google", {
         //if sucessfull this will take us to the workout log
-      successRedirect: "/workoutlog",
+      successRedirect: "/user",
       failureRedirect: "/",
     })
   );
@@ -29,11 +29,4 @@ router.get("/logout", function (req, res) {
     res.redirect("/");
   });
   
-
-
-
-
-
-
-
 module.exports = router;
