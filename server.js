@@ -8,7 +8,7 @@ const indexRoutes = require('./routes/index');
 const userRoutes = require('./routes/user');
 const excerRoute = require('./routes/workoutlog'); 
 const workMod = require('./models/workoutlog');
-
+const router = express.Router();
 
 
 
@@ -36,8 +36,8 @@ require("./config/passport");
     })
   );
 // Middleware
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(logger('dev'));
+// app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(logger('dev'));
 app.use(express.static('public'));
 app.use('/', router);
 app.use(express.json());

@@ -10,17 +10,11 @@ const exerSchema = new mongoose.Schema({
 });
 
 const durSchema = new mongoose.Schema({
-    type: Number, 
-    min: 0, 
-    max: 9999,
-    required: true
+    duration: {type: Number, min: 1, max: 60, required: true}
 });
 
 const repSchema = new mongoose.Schema({
-    type: Number,
-    min: 0,
-    max: 9999, 
-    required: true
+   reps: {type: Number, min: 1, max: 100, required: true}
 }); 
 
 
