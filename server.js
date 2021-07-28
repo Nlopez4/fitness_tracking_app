@@ -44,6 +44,7 @@ app.use(express.urlencoded({ extended: false }));
 
   app.use(passport.initialize());
   app.use(passport.session());
+  
 
   //welcome signin/log in page
   app.use('/', indexRoutes);
