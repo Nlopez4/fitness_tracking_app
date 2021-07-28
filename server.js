@@ -68,6 +68,13 @@ require("./config/passport");
       saveUninitialized: true,
     })
   );
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(logger('dev'));
+app.use(express.static('public'));
+app.use('/', router);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
   app.use(passport.initialize());
   app.use(passport.session());
@@ -78,8 +85,11 @@ require("./config/passport");
   app.use('/', userRoutes);
 
 
-
-  
+// Server bind
+app.get('/', function (req, res) {
+    res.send('Welcome');
+  });
+ 
 
 
 app.listen(PORT, () => {
