@@ -4,7 +4,9 @@ const router = express.Router();
 const workoutCtrl = require('../controllers/workoutlog');
 
 router.get("/", function (req, res) {
-    res.render("index", {
+    res.get("index", {
       user: req.user,
     });
   });
+
+ module.exports = router; 

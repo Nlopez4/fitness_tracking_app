@@ -1,9 +1,10 @@
 const log = require('../models/workoutlog')
 
 module.exports = {
-    new: worklog
-  }
+  index,
+};
 
-function worklog(req, res) {
-    res.send('views/index');
-  }
+function index(req, res) {
+  res.render('workoutlog/index')
+}; 
+

@@ -23,6 +23,8 @@ const repSchema = new mongoose.Schema({
     required: true
 }); 
 
+
+
 module.exports = mongoose.model('exercise', exerSchema);
 module.exports = mongoose.model('duration', durSchema);
 module.exports = mongoose.model('reps', repSchema);
