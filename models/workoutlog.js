@@ -1,3 +1,5 @@
+// data for exercise, duration, and reps
+
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
