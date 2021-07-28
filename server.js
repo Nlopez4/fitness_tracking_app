@@ -6,7 +6,8 @@ const session = require("express-session");
 const passport = require("passport");
 const indexRoutes = require('./routes/index');
 const userRoutes = require('./routes/user');
-
+const excerRoute = require('./routes/workoutlog'); 
+const workMod = require('./models/workoutlog');
 
 
 
@@ -45,7 +46,8 @@ app.use(express.urlencoded({ extended: false }));
   app.use(passport.initialize());
   app.use(passport.session());
   
-
+// workout log 
+app.use('/', excerRoute); 
   //welcome signin/log in page
   app.use('/', indexRoutes);
   //user lands in this page after logging in

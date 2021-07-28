@@ -1,9 +1,9 @@
-const log = require('./models/workoutlog')
+const log = require('../models/workoutlog')
 
 module.exports = {
-    new: log
+    new: worklog
   }
 
-function log(req, res) {
-    res.render('views/index');
+function worklog(req, res) {
+    res.send('views/index');
   }

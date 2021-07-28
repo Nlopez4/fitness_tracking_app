@@ -11,16 +11,18 @@ const exerSchema = new mongoose.Schema({
 
 const durSchema = new mongoose.Schema({
     type: Number, 
-    min: 1, 
-    max: 60,
+    min: 0, 
+    max: 9999,
+    required: true
 });
 
 const repSchema = new mongoose.Schema({
     type: Number,
-    min: 1,
-    max: 100, 
+    min: 0,
+    max: 9999, 
+    required: true
 }); 
 
 module.exports = mongoose.model('exercise', exerSchema);
 module.exports = mongoose.model('duration', durSchema);
-module.exports = mongoose.model('reps', repchema);
+module.exports = mongoose.model('reps', repSchema);
