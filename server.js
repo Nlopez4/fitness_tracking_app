@@ -1,7 +1,7 @@
 require("dotenv").config();
 /* ==== External Modules ==== */
 const express = require("express");
-//const morgan = require('morgan');
+const morgan = require('morgan');
 const session = require("express-session");
 const passport = require("passport");
 const indexRoutes = require('./routes/index');
@@ -9,7 +9,7 @@ const userRoutes = require('./routes/user');
 
 
 
-//const methodOverride = require("method-override");
+
 
 /* ==== Internal Modules ==== */
 
@@ -49,7 +49,6 @@ app.use(express.urlencoded({ extended: false }));
   app.use('/', indexRoutes);
   //user lands in this page after logging in
   app.use('/', userRoutes);
-
 
 // Server bind
 app.get('/', function (req, res) {
