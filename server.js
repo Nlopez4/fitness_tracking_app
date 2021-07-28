@@ -6,11 +6,14 @@ const logger = require('morgan');
 const router = express.Router();
 
 /* ==== Internal Modules ==== */
-const routes = require("./routes");
 const MongoClient = require('mongodb').MongoClient
 /* ==== Instanced Modules  ==== */
 const app = express();
 
+
+// Routes
+const routes = require("./routes");
+require('./config/database');
 
 /* ====  Configuration  ==== */
 const PORT = process.env.PORT || 4000;

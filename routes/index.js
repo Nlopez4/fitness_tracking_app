@@ -1,4 +1,4 @@
-const ctrl = require("../controllers");
+// const ctrl = require("../controllers");
 
 
-module.exports = router;
+// module.exports = router;
