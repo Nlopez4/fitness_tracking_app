@@ -1,3 +1,4 @@
+
 // data for exercise
 
 const mongoose = require('mongoose');
@@ -18,3 +19,15 @@ const findExercise = module.exports = mongoose.model('exercise', exerSchema);
 findExercise.find({}, function (err, result) {
     if (err) return handleError(err);
 }); 
+
+
+
+
+
+
+
+
+
+
+
+
