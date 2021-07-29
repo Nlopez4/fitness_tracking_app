@@ -11,6 +11,15 @@ function isLoggedIn(req, res, next) {
     res.redirect("/auth/google");
   }
 
+//this route logs you out
+router.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
+
+
+
 module.exports = router;
 
 
