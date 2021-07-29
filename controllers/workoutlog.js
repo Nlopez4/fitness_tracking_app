@@ -1,7 +1,4 @@
-const log = require('../models/workoutlog')
-
-
-
+const log = require('../models/workoutlog'); 
 
 module.exports = {
   index,

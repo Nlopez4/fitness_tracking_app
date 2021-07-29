@@ -11,20 +11,10 @@ const exerSchema = new mongoose.Schema({
     }
 });
 
-const durSchema = new mongoose.Schema({
-    duration: {type: Number, min: 1, max: 60, required: true}
-});
-
-const repSchema = new mongoose.Schema({
-   reps: {type: Number, min: 1, max: 100, required: true}
-}); 
-
-
-
 const findExercise = module.exports = mongoose.model('exercise', exerSchema);
-const findDuration = module.exports = mongoose.model('duration', durSchema);
-const findReps = module.exports = mongoose.model('reps', repSchema);
 
+
+// display 
 findExercise.find({}, function (err, result) {
     if (err) return handleError(err);
 }); 

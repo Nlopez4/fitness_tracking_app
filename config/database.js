@@ -7,7 +7,7 @@ mongoose.connect(process.env.DATABASE_URL, {
     useUnifiedTopology: true 
 });
 
-const db = mongoose.connection
+const db = mongoose.connection; 
 db.once('open', _ => {
   console.log('Database connected:', process.env.DATABASE_URL)
 })
