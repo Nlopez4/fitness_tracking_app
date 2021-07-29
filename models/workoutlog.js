@@ -1,12 +1,14 @@
-// data for exercise, duration, and reps
+// data for exercise
 
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
 const exerSchema = new mongoose.Schema({
-    type: String,
-    enum: ['Pushup', 'Pull Ups', 'Chin Ups', 'Barbell Squats', 'Air Squats', 'Bulgarian Split Squat', 'Goblet Squat','Dumbbell Squat', 'Wall Sits', 'Conventional Deadlift', 'Sumo Deadlift', 'Kettle Bells', 'Outdoor Walk', 'Indoor Walk', 'Outdoor Run', 'Treadmill', 'Row', 'Bicycle', 'Bench Press', 'Dips', 'Dumbbell Press', 'Dips']
+    exercise: {
+        type: String,
+        enum: ['Pushup', 'Pull Ups', 'Chin Ups', 'Barbell Squats', 'Air Squats', 'Bulgarian Split Squat', 'Goblet Squat','Dumbbell Squat', 'Wall Sits', 'Conventional Deadlift', 'Sumo Deadlift', 'Kettle Bells', 'Outdoor Walk', 'Indoor Walk', 'Outdoor Run', 'Treadmill', 'Row', 'Bicycle', 'Bench Press', 'Dips', 'Dumbbell Press', 'Dips']
+    }
 });
 
 const durSchema = new mongoose.Schema({
@@ -19,6 +21,10 @@ const repSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model('exercise', exerSchema);
-module.exports = mongoose.model('duration', durSchema);
-module.exports = mongoose.model('reps', repSchema);
+const findExercise = module.exports = mongoose.model('exercise', exerSchema);
+const findDuration = module.exports = mongoose.model('duration', durSchema);
+const findReps = module.exports = mongoose.model('reps', repSchema);
+
+findExercise.find({}, function (err, result) {
+    if (err) return handleError(err);
+}); 
