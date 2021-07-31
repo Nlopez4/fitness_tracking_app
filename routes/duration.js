@@ -1,18 +1,8 @@
 const express = require('express'); 
 const router = express.Router();
-const repsCtrl = require('../controllers/duration');
+const durationCtrl = require('../controllers/duration');
 
-router.get("/", function (req, res) {
-    res.send("index", {
-      user: req.user,
-    });
-  });
+router.get('/', durationCtrl.index); 
 
-  router.post('/', function (req, res) {
-    res.send("index", {
-      user: req.user,
-    });
-  }); 
-   
 
- module.exports = router; 
+ module.exports = router;  

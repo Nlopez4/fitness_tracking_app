@@ -9,10 +9,3 @@ const durSchema = new mongoose.Schema({
 });
 
 const findDuration = module.exports = mongoose.model('duration', durSchema);
-
-
-// display 
-findDuration.
-    find().
-    limit(60).
-    select('reps'); 

@@ -1,10 +1,14 @@
-const log = require('../models/workoutlog'); 
+const Log = require('../models/workoutlog');
 
 module.exports = {
-  index,
-};
+  index, 
+}; 
+
 
 function index(req, res) {
-  res.send('workoutlog/index')
+  Log.find({}, function (err, workoutlog) {
+    res.render('user/index'); 
+  })
 }; 
+
 

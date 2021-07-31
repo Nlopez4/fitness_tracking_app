@@ -11,6 +11,12 @@ function isLoggedIn(req, res, next) {
     res.redirect("/auth/google");
   }
 
+  router.get("/", function (req, res) {
+    res.render("user", {
+      user: req.user,
+    });
+  });
+
 module.exports = router;
 
 

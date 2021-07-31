@@ -1,9 +1,12 @@
-const log = require('../models/reps');
+const logReps = require('../models/reps');
 
 module.exports = {
   index,
 };
 
 function index(req, res) {
-  res.send('reps/index')
+  logReps.find({}, function (err, reps) {
+    res.render('user/index');
+})
 }; 
+

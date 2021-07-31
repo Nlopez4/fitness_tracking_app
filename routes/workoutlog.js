@@ -1,19 +1,17 @@
-// For workoutlog data
+// workoutlog data... connects to "user" page
 const express = require('express'); 
+
 const router = express.Router();
 const workoutCtrl = require('../controllers/workoutlog');
 
-router.get("/", function (req, res) {
-    res.send("index", {
-      user: req.user,
-    });
-  });
-  
-router.post('/', function (req, res) {
-  res.send("index", {
-    user: req.user,
-  });
-}); 
- 
+// GET and POST will go here
 
- module.exports = router; 
+
+
+// router.get('/', workoutCtrl.index); 
+// router.post('/', workoutCtrl.create); 
+
+
+module.exports = router; 
+
+
