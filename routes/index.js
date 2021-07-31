@@ -1,18 +1,21 @@
-
-// const ctrl = require("../controllers");
-
-
-// module.exports = router;
-
 const router = require('express').Router();
 const passport = require("passport");
-const ctrl = require("../controllers");
+//const ctrl = require("../controllers");
 
 router.get("/", function (req, res) {
   res.render("index", {
     user: req.user,
   });
 });
+
+
+router.post("/user", function (req, res) {
+  res.render("user", {
+    user: req.user,
+  });
+});
+
+
 
 //asking google to take over
 router.get(
@@ -32,11 +35,10 @@ router.get(
 
 //this route logs you out
 router.get("/logout", function (req, res) {
-    req.logout();
-    res.redirect("/");
-  });
-  
-module.exports = router;
+  req.logout();
+  res.redirect("/");
+});
 
-module.exports = router;
+  
+
 module.exports = router;

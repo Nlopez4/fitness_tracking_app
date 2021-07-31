@@ -9,5 +9,73 @@
 <body>
 <!--This is whre user lands after logging in-->    
 <h1>Fitness Tracking App</h1>
+
+<table>
+  <thead></thead>
+<h2>Workout</h2>
+</thead>
+<tbody>
+  <ul>
+  
+</ul>
+
+<tbody>
+
+</table>
+
+
+<!--exercise drop down menu-->
+<h2>Add Exercise</h2>
+<form action="/workout" method="POST">
+<label>Exercise:
+<select name="Exercise">
+  <% exercise.forEach(function(e) { %>
+    <option value="<%= e.exercise %>"><%= e.exercise %></option>
+   <% }); %>
+</select>
+</label>
+<br>    
+
+
+<!--submit button-->
+<div class="row">
+  <div class="col-md-3">
+    <a class="btn btn-outline-dark" href="/user" role="button" style="text-transform:none">
+    <p>Submit</p>  
+    </a>
+  </div>
+
+
+
+
+<!--display-->
+
+<table>
+    <thead>
+<th><h1>Workout Log</h1></th>
+
+<tr>
+<th><h2>Exercise</h2></th>
+<th><h2>Reps</h2></th>
+<th><h2>Duration</h2></th>
+</thead>
+
+<tbody>
+ 
+  <tr>
+  <td><%= exercise.newLog %></td>
+  </tr>
+
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
 </body>
 </html>
