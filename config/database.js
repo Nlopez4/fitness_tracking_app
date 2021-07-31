@@ -1,4 +1,5 @@
 // mongoose connection
+<<<<<<< HEAD
 // const mongoose = require('mongoose');
 
 // mongoose.connect(process.env.DATABASE_URL, {
@@ -51,12 +52,16 @@ db.on('error', err => {
 
 
 
+=======
+>>>>>>> main
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/FitnessTracking', {
   useNewUrlParser: true,
 >>>>>>> c81592971193c6d293d70a0d493a58f6587f9fb1
   useCreateIndex: true,
+  useFindAndModify: false,
   useUnifiedTopology: true
+ 
 });
 const db = mongoose.connection;
 // database connection event
@@ -67,4 +72,9 @@ db.on('connected', function () {
 =======
 });
 
+<<<<<<< HEAD
 >>>>>>> c81592971193c6d293d70a0d493a58f6587f9fb1
+=======
+
+
+>>>>>>> main
