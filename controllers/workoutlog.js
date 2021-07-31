@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+const Log = require('../models/workoutlog');
+
+module.exports = {
+  index, 
+}; 
+
+
+function index(req, res) {
+  Log.find({}, function (err, workoutlog) {
+    res.render('user/index'); 
+  })
+}; 
+
+
+=======
 // const log = require('../models/workoutlog'); 
 // const Exercise = require('../models/workoutlog');
 
@@ -22,3 +38,4 @@
 //       res.redirect("/user")
 //   })
 // }
+>>>>>>> main

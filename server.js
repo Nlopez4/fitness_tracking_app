@@ -18,7 +18,12 @@ const router = express.Router();
 /* ==== Internal Modules ==== */
 const indexRoutes = require('./routes/index');
 const userRoutes = require('./routes/user');
+<<<<<<< HEAD
+const excerRoute = require('./routes/workoutlog'); 
+const path = require('path');
+=======
 // const excerRoute = require('./routes/workoutlog'); 
+>>>>>>> main
 // const durationRoute = require('./routes/duration');
 // const repsRoute = require('./routes/reps'); 
 // const workMod = require('./models/workoutlog');
@@ -70,29 +75,49 @@ require("./config/passport");
       saveUninitialized: true,
     })
   );
+<<<<<<< HEAD
+// Middleware
+
+=======
+>>>>>>> main
 
 
 
 // app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(logger('dev'));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+
 
   app.use(passport.initialize());
   app.use(passport.session());
   
 // workout log 
+<<<<<<< HEAD
+app.use('/user', excerRoute); // goes to user page
+=======
 //app.use('/', excerRoute); 
+>>>>>>> main
   //welcome signin/log in page
 app.use('/', indexRoutes);
   //user lands in this page after logging in
+<<<<<<< HEAD
+  app.use('/user', userRoutes);
+  app.use(express.static(path.join(__dirname, 'public')));
+
+// Server bind
+app.get('/', function (req, res) {
+    res.render('/user/index');
+  });
+=======
 app.use('/user', userRoutes);
 
 // Server bind
 //app.get('/', function (req, res) {
   //  res.send('Welcome');
   //});
+>>>>>>> main
  
 
 

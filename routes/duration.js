@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+const express = require('express'); 
+const router = express.Router();
+const durationCtrl = require('../controllers/duration');
+
+router.get('/', durationCtrl.index); 
+
+
+ module.exports = router;  
+=======
 // const express = require('express'); 
 // const router = express.Router();
 // const repsCtrl = require('../controllers/duration');
@@ -16,3 +26,4 @@
    
 
 //  module.exports = router; 
+>>>>>>> main
