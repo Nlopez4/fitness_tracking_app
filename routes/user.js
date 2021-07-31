@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const userCtrl = require('../controllers/user');
-const create = require('../models/workoutlog');
 
 
 // router.get("/", function (req, res) {
@@ -15,7 +14,9 @@ const create = require('../models/workoutlog');
 
 // GET /user
 router.get('/', isLoggedIn, userCtrl.index);
-//router.get('/user', isLoggedIn, userCtrl.create);
+// router.post('/', isLoggedIn, userCtrl.create);
+// router.get('/:id', isLoggedIn, userCtrl.show);
+router.get('/', isLoggedIn, userCtrl.newLog);
 
 
 
