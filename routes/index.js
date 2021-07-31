@@ -1,3 +1,9 @@
+
+// const ctrl = require("../controllers");
+
+
+// module.exports = router;
+
 const router = require('express').Router();
 const passport = require("passport");
 const ctrl = require("../controllers");
@@ -31,5 +37,6 @@ router.get("/logout", function (req, res) {
   });
   
 module.exports = router;
+
 module.exports = router;
 module.exports = router;
