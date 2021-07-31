@@ -8,6 +8,15 @@ router.get("/", function (req, res) {
   });
 });
 
+
+router.post("/user", function (req, res) {
+  res.render("user", {
+    user: req.user,
+  });
+});
+
+
+
 //asking google to take over
 router.get(
     "/auth/google",
@@ -24,6 +33,11 @@ router.get(
     })
   );
 
+//this route logs you out
+router.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/");
+});
 
   
 

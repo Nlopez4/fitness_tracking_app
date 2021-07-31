@@ -34,6 +34,7 @@ const app = express();
 
 /* ====  Configuration  ==== */
 const PORT = process.env.PORT || 4000;
+
 app.set("view engine", "ejs");
 
 
@@ -86,7 +87,7 @@ app.use(express.urlencoded({ extended: false }));
   //welcome signin/log in page
 app.use('/', indexRoutes);
   //user lands in this page after logging in
-app.use('/', userRoutes);
+app.use('/user', userRoutes);
 
 // Server bind
 //app.get('/', function (req, res) {

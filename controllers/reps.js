@@ -1,9 +1,9 @@
-const log = require('../models/reps');
+// const log = require('../models/reps');
 
-module.exports = {
-  index,
-};
+// module.exports = {
+//   index,
+// };
 
-function index(req, res) {
-  res.send('reps/index')
-}; 
+// function index(req, res) {
+//   res.send('reps/index')
+// }; 
