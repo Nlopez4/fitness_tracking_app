@@ -10,51 +10,54 @@
 </head>
 <body>
   <h1>Log Your Workout</h1>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-  <table>
-  </thead>
-  <tbody>
-    <ul>
-  </ul>
-  <tbody>
-  </table>
   <!-- <label>Exercise: -->
-    <form action="/workout" method="POST">
-      <div class="select" id="select" style="width:500px;">
-    <label for="exercises"></label>
-  <select name="Exercise">
-    <% exercise.forEach(function(e) { %>
-      <option value="<%= e.exercise %>"><%= e.exercise %></option>
-     <% }); %>
-    </div>
-  </select>
-  </label>
-  <!--Inputs-->
-  <form action="/action_page.php"></form>
-  <div class="inputs" id="inputs">
-  <label for="exercises">Reps</label>
-    <input id="number" type="number" value="1">
-    <label for="exercises">Duration</label>
-   <input id="number" type="number" value="1">
-</div>
-   </form>
-   <!--Submit-->
-   <div class="submit" id="submit">
-    <input type="submit" value="Submit">
+  <form action="/user/post" method="POST">
+    <div class="select" id="select" style="width:500px;">
+      <label for="exercises">Exercise</label>
+    <select name="exercise">
+      <% exercise.forEach(function(e) { %>
+        <option value="<%= e.exercise %>"><%= e.exercise %></option>
+      <% }); %>
+      </div>
+    </select>
+    </label>
+    <!--Inputs-->
+    <div class="inputs" id="inputs">
+    <label for="rep">Reps</label>
+      <input id="reps" type="number" value="1">
+      <label for="duration">Duration</label>
+    <input id="duration" type="number" value="1">
   </div>
+    <!--Submit-->
+    <div class="submit" id="submit">
+      <input type="submit" value="Submit">
+    </div>
   </form>
+
+
   <!--display-->
-    <td><%= exercise.exercise %></td>
-    </tr>
-  </tbody>
+  <h1>Log Of The Day</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Exercise:</th> 
+        <th>Reps:</th>
+        <th>Duration:</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%user.exercises && user.exercises.forEach(function(ex) { %>
+        <tr>
+          <td><%= ex.exercise %></td>
+          <td><%= ex.reps %></td>
+          <td><%= ex.duration %></td>
+          <td>delete button</td> 
+        </tr>
+      <% }); %>
+    </tbody>
   </table>
+  
   </body>
   </html>
 

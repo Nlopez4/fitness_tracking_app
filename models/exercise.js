@@ -13,6 +13,9 @@ const exerSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Exercise', exerSchema);
+//duration: {type: Number, min: 1, max: 60, required: true}
+//reps: {type: Number, min: 1, max: 100, required: true}
+
 
 
 // // display 

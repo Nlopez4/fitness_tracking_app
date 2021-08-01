@@ -13,9 +13,9 @@ const userCtrl = require('../controllers/user');
 
 
 // GET /user
+router.get('/:id', isLoggedIn, userCtrl.show);
 router.get('/', isLoggedIn, userCtrl.index);
-router.post('/', isLoggedIn, userCtrl.create);
-// router.get('/:id', isLoggedIn, userCtrl.show);
+router.post('/post', isLoggedIn, userCtrl.create);
 // router.get('/', isLoggedIn, userCtrl.newLog);
 
 
