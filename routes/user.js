@@ -13,10 +13,10 @@ const userCtrl = require('../controllers/user');
 
 
 // GET /user
+router.get('/:id', isLoggedIn, userCtrl.show);
 router.get('/', isLoggedIn, userCtrl.index);
-// router.post('/', isLoggedIn, userCtrl.create);
-// router.get('/:id', isLoggedIn, userCtrl.show);
-router.get('/', isLoggedIn, userCtrl.newLog);
+router.post('/post', isLoggedIn, userCtrl.create);
+// router.get('/', isLoggedIn, userCtrl.newLog);
 
 
 
@@ -25,17 +25,9 @@ function isLoggedIn(req, res, next) {
     res.redirect("/auth/google");
   }
 
-<<<<<<< HEAD
-  router.get("/", function (req, res) {
-    res.render("user", {
-      user: req.user,
-    });
-  });
-=======
 
 
 
->>>>>>> main
 
 module.exports = router;
 

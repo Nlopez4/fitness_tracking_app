@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+* {
+  font-family: "Righteous", cursive;
+}
+Body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+h1 {
+  text-align: center;
+  color: aqua;
+  font-size: 200px;
+  font-family: "Righteous", cursive;
+  font-size: 100px;
+  text-shadow: 5px 5px 0px #EB452B, 10px 10px 0px #EFA032, 15px 15px 0px #46B59B,
+    20px 20px 0px #017E7F, 25px 25px 0px #052939, 30px 30px 0px #2B45D4,
+    35px 35px 0px #2B1AC1, 0px 0px 0px #2DA4C2, 0px 0px 0px #1F5AB3;
+}
+form {
+  width: 100%;
+  padding: 12px 20px;
+  /* margin: 8px 0;
+    margin: auto auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #ccc;
+  border-radius: 4px; */
+  /* box-sizing: border-box; */
+  flex-direction: column;
+  margin-top: 50px;
+}
+.inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 100%;
+  padding: 12px 20px;
+  margin-block: 20px;
+}
+.select {
+  color: white;
+  margin: 0px;
+  margin-right: 10px;
+  text-align: center;
+  padding-bottom: 0px;
+}
+.submit {
+  margin-top: 30px;
+}
+label {
+  display: inline-block;
+}
