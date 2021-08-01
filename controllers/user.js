@@ -1,20 +1,19 @@
 const User = require('../models/user');
-const Exercise = require('../models/workoutlog');
-//const Log = require('../models/workoutlog');
+const Exercise = require('../models/exercise');
+const Log = require('../models/log');
 
 
 function index(req, res, next) {
  const user = req.user 
     User.find({_id:req.user._id}, function(err, user) {
-     // console.log(user)
+      // User.populate('exercise').exec(function(err, exercise))
+     console.log(user)
+
        Exercise.find({}, function(err, exercise) {
       //console.log("exercise", exercise)
       res.render('user/index', { user, exercise });
+
    })
-  //  const Log = Exercise
-  //     Log.findOne(function(err, log){
-  //       console.log("entered",log)
-  //     })
   })
   };
 
@@ -28,26 +27,33 @@ function index(req, res, next) {
 
 
 
-// //show function
-// function show(req, res) {
-//   Exercise.find({}, function(err, exercise) {
+//show function
+function show(req, res) {
+  
+//   Exercise.find({_id:req.params.id}, function(err, exercise) {
+//     console.log(exercise)
 //   res.render('user/index', { 
 //       exercise });
 //   });
-// };
+ };
 
 
 
   
 //create function
 function create(req, res) {
- const exercise = new Exercise(req.body)
-  exercise.save(function (err){
+ // console.log(create)
+ const log = new Log(req.body)
+console.log(log, "new log")
+ User.findOne({_id:req.user._id}, function(err, user) {
+//console.log(user)
+ user.exercises.push(log)
+  user.save(function (err){
     if(err)
      return res.send(err)
-    res.redirect("user/index")
+    res.redirect(`/user` )
    })
-
+  })
 };
 
 
@@ -59,7 +65,7 @@ function create(req, res) {
 module.exports = {
     index,
    create,
-    // show,
+    show,
     // newLog,
 };
 
