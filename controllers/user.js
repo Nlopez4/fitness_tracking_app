@@ -13,8 +13,7 @@ function index(req, res, next) {
         //console.log("exercise", exercise)
   res.render('user/index', {user, exercise });
     })
-    }).populate({path: "exercise"})
-    console.log("new new", user)
+    })
     };
 
 
@@ -29,12 +28,11 @@ function index(req, res, next) {
 
 //show function
 function show(req, res) {
-  
-  // Exercise.find({_id:req.params.id}, function(err, exercise) {
-  //   console.log(exercise)
-  // res.render('user/index', { 
-  //     exercise });
-  // })
+  Exercise.find({_id:req.params.id}, function(err, exercise) {
+    console.log(exercise)
+  res.render('user/index', { 
+      exercise });
+  })
  };
 
 
@@ -53,10 +51,9 @@ function create(req, res) {
      return res.send(err)
     res.redirect(`/user`) 
    })
-  })
-  //console.log("add to log", log);
-
-};
+  }).populate('exercise')
+  console.log("add to log", log);
+}
   
 
 
