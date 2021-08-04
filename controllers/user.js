@@ -3,19 +3,19 @@ const Exercise = require('../models/exercise');
 const Log = require('../models/log');
 
 
+
+
 function index(req, res, next) {
  const user = req.user 
-    User.find({_id:req.user._id}, function(err, user) {
-      // User.populate('exercise').exec(function(err, exercise))
-     console.log(user)
-
-       Exercise.find({}, function(err, exercise) {
-      //console.log("exercise", exercise)
-      res.render('user/index', { user, exercise });
-
-   })
-  })
-  };
+  User.find({_id:req.user._id}, function(err, user) {
+   // console.log(user)
+  Exercise.find({}, function(err, exercise) {
+        //console.log("exercise", exercise)
+  res.render('user/index', {user, exercise });
+    })
+    }).populate({path: "exercise"})
+    console.log("new new", user)
+    };
 
 
 
@@ -30,11 +30,11 @@ function index(req, res, next) {
 //show function
 function show(req, res) {
   
-//   Exercise.find({_id:req.params.id}, function(err, exercise) {
-//     console.log(exercise)
-//   res.render('user/index', { 
-//       exercise });
-//   });
+  // Exercise.find({_id:req.params.id}, function(err, exercise) {
+  //   console.log(exercise)
+  // res.render('user/index', { 
+  //     exercise });
+  // })
  };
 
 
@@ -43,19 +43,21 @@ function show(req, res) {
 //create function
 function create(req, res) {
  // console.log(create)
- const log = new Log(req.body)
-console.log(log, "new log")
+ const log = new Log(req.body) 
+//console.log(log, "new log")
  User.findOne({_id:req.user._id}, function(err, user) {
 //console.log(user)
  user.exercises.push(log)
   user.save(function (err){
     if(err)
      return res.send(err)
-    res.redirect(`/user` )
+    res.redirect(`/user`) 
    })
   })
-};
+  //console.log("add to log", log);
 
+};
+  
 
 
 
